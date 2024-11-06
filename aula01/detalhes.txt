@@ -1,0 +1,71 @@
+1. Identifique a versão do PHP e Zend Engine
+Resposta:
+PHP 8.3.12 
+Zend Engine v4.3.12
+
+2. Liste as extensões instaladas
+Resposta:
+Core
+ctype
+curl
+date
+dom
+fileinfo
+filter
+hash
+iconv
+json
+libxml
+mbstring
+mysqlnd
+openssl
+pcre
+PDO
+pdo_sqlite
+Phar
+posix
+random
+readline
+Reflection
+session
+SimpleXML
+sodium
+SPL
+sqlite3
+standard
+tokenizer
+xml
+xmlreader
+xmlwriter
+zlib
+
+3. Identifique a localização do arquivo ```php.ini``` no contêiner
+Resposta:
+Antes da substituição: 
+Configuration File (php.ini) Path: /usr/local/etc/php
+Loaded Configuration File:         (none)
+
+Após a substituição:
+Resposta:
+Configuration File (php.ini) Path: /usr/local/etc/php
+Loaded Configuration File:         /usr/local/etc/php/php.ini
+
+4. Substituia o arquivo interno do ```php.ini``` pelo novo usando volume
+Resposta:
+No docker-compose.yml
+volumes:
+    - ".:/projeto"
+    - "./php.ini:/usr/local/etc/php/php.ini"
+
+5. Ajuste o horário padrão do PHP para ```America/Sao_Paulo```
+Resposta:
+Alterado no php.ini: date.timezone = "America/Sao_Paulo"
+
+6. Aumente o limite de memória do PHP para 512mbs
+Resposta:
+Alterado no php.ini: memory_limit = 512M
+
+8. Corrija o erro de exibição do projeto
+Resposta:
+Havia um erro de tipagem no retorno da função formatServices que estava declarado para retornar string e estava retornando array.
+Corrigi o código para que a função retorne a string $servicesHtml.

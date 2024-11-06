@@ -1,0 +1,26 @@
+services:
+  nginx:
+    ports:
+      - "80:80"
+    volumes:
+      - .:/app- ./app:/var/www/html 
+      # - ./default.conf:/etc/nginx/conf.d/default.conf
+      
+  php-fpm:
+    build:
+      context: ./docker
+      dockerfile: dev.fpm.Dockerfile
+    volumes:
+      - ./app:/var/www/html
+
+  postgres:
+      image: postgres:13-alpine
+      environment:
+         POSTGRES_USER: root
+         POSTGRES_PASSWORD: root
+         POSTGRES_DB: pgdb
+      ports:
+         - "5432:5432"
+      volumes:
+         - pgdata:/var/lib/postgresql/data
+       

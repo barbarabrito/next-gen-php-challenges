@@ -1,0 +1,15 @@
+{
+    "name": "nextgenphpchallenges/oop",
+    "autoload": {
+        "psr-4": {
+            "Nextgenphpchallenges\\Oop\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "barbarabrito",
+            "email": "barbaramabrito@gmail.com"
+        }
+    ],
+    "require": {}
+}
