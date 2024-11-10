@@ -36,7 +36,7 @@ final class ExpireTest extends PHPUnit\Framework\TestCase
         ];
     }
 
-    public function invalidNegativeparameterDataProvider(): array
+    public function invalidNegativeParameterDataProvider(): array
     {
         return [
             [-1],
@@ -126,7 +126,7 @@ final class ExpireTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @dataProvider invalidNegativeparameterDataProvider
+     * @dataProvider invalidNegativeParameterDataProvider
      */
     public function testExpiresComponentInvalidNegativeParameterException($negativeParam)
     {
